@@ -18,7 +18,7 @@ with open('projects.csv', newline='') as csv_file:
     first_row = True
     for row in csv_data:
         if not first_row:
-            project_dict = {'day': row[0],
+            project_dict = {'pages': row[0],
                             'name': row[1],
                             'category': row[2],
                             'description': row[3]}
@@ -39,7 +39,7 @@ def get_all_posts():
 def show_day(day_number):
     print("day_number", type(day_number), day_number)
     for project in list_of_dicts:
-        if project['day'] == str(day_number):
+        if project['pages'] == str(day_number):
             selected_project = project
     print('Day:', selected_project)
     return render_template("portfolio-details.html", project=selected_project)
