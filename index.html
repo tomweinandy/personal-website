@@ -353,7 +353,7 @@
 
         <!-- Row 1 -->
 <!--        <div class="logo-marquee">-->
-        <div class="logo-marquee" data-speed="120">
+        <div class="logo-marquee" data-speed="30">
           <div class="logo-track">
             <img src="static/img/logos/axios.svg" alt="Axios">
             <img src="static/img/logos/cnbc.svg" alt="CNBC">
@@ -365,7 +365,7 @@
 
         <!-- Row 2 -->
 <!--        <div class="logo-marquee">-->
-        <div class="logo-marquee" data-speed="110" data-reverse>
+        <div class="logo-marquee" data-speed="30" data-reverse>
           <div class="logo-track reverse">
             <img src="static/img/logos/cbs_radio.svg" alt="CBS Radio">
             <img src="static/img/logos/retail_brew.png" alt="Retail Brew">
@@ -1241,45 +1241,6 @@
 
   <!-- Template Main JS File -->
   <script src="static/js/main.js"></script>
-
-  <!--Function for the Featured In marquee-->
-  <script>
-  (function () {
-    function onceReady(node){
-      const imgs = node.querySelectorAll('img');
-      return Promise.all([...imgs].map(img =>
-        (img.complete && img.naturalWidth) ? Promise.resolve() :
-        new Promise(res => img.addEventListener('load', res, {once:true}))
-      ));
-    }
-    function setup(mq){
-      const first = mq.querySelector('.logo-track');
-      mq.querySelectorAll('.logo-track.clone').forEach(n=>n.remove());
-      const clone = first.cloneNode(true);
-      clone.classList.add('clone');
-      mq.appendChild(clone);
-      const w = first.scrollWidth;
-      mq.style.setProperty('--w', w + 'px');
-      const pps = Number(mq.dataset.speed || 120);
-      mq.style.setProperty('--dur', (w / pps) + 's');
-    }
-    function init(){
-      document.querySelectorAll('.logo-marquee').forEach(mq=>{
-        onceReady(mq).then(()=>setup(mq));
-      });
-    }
-
-    // run once after load
-    window.addEventListener('load', init, {passive:true});
-
-    // debounced resize
-    let t;
-    window.addEventListener('resize', () => {
-      clearTimeout(t);
-      t = setTimeout(init, 150);
-    }, {passive:true});
-  })();
-  </script>
 
 
 </body>

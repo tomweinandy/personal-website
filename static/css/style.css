@@ -1541,29 +1541,66 @@ footer .credits a {
 }
 
 /* Press logos slider */
-.press-logos { padding: 3rem 0; position: relative; }
-.press-logos .title-a { color: #fff; text-transform: none; }
-.press-swiper .swiper-slide { width: auto; }                    /* allow natural logo width */
-.press-logo {
-  height: 48px;                 /* adjust if needed (64px also looks good) */
-  width: auto;
-  display: block;
-  opacity: 0.85;
-  filter: brightness(0) invert(1); /* normalize to white over blue bg */
-  transition: transform .25s ease, opacity .25s ease, filter .25s ease;
-}
-.press-logo:hover { opacity: 1; transform: scale(1.04); }
+/*.press-logos { padding: 3rem 0; position: relative; }*/
+/*.press-logos .title-a { color: #fff; text-transform: none; }*/
+/*.press-swiper .swiper-slide { width: auto; }                    !* allow natural logo width *!*/
+/*.press-logo {*/
+/*  height: 48px;                 !* adjust if needed (64px also looks good) *!*/
+/*  width: auto;*/
+/*  display: block;*/
+/*  opacity: 0.85;*/
+/*  filter: brightness(0) invert(1); !* normalize to white over blue bg *!*/
+/*  transition: transform .25s ease, opacity .25s ease, filter .25s ease;*/
+/*}*/
+/*.press-logo:hover { opacity: 1; transform: scale(1.04); }*/
 
-/* on very small screens give a bit more height */
-@media (max-width: 576px) {
-  .press-logo { height: 40px; }
+/* Featured-in: jitter-free marquee (2 rows) */
+.featured-in { background:#fff; overflow:hidden; }
+.logo-marquee { position:relative; overflow:hidden; height:60px; margin:20px 0; }
+
+.logo-track,
+.logo-track.clone {
+  position:absolute; left:0; top:50%;
+  transform:translate3d(0,-50%,0);
+  display:flex; align-items:center; gap:48px;
+  will-change:transform;
+  animation-duration:var(--dur,60s);
+  animation-timing-function:linear;
+  animation-iteration-count:infinite;
+  animation-play-state: paused;       /* JS switches this to running */
 }
 
-@media (prefers-reduced-motion: reduce){
-  .logo-track, .logo-track.clone {
-    animation: none !important;
-    transform: translate3d(0,-50%,0) !important;
-  }
+/* forward */
+.logo-track        { animation-name: marquee-a; }
+.logo-track.clone  { animation-name: marquee-b; transform:translate3d(var(--w,0px),-50%,0); }
+
+/* reverse when [data-reverse] is present */
+.logo-marquee[data-reverse] .logo-track       { animation-name: marquee-rev-a; }
+.logo-marquee[data-reverse] .logo-track.clone { animation-name: marquee-rev-b; transform:translate3d(calc(-1*var(--w,0px)),-50%,0); }
+
+.logo-marquee img { height:44px; width:auto; display:block; }
+
+@keyframes marquee-a     { from{transform:translate3d(0,-50%,0)} to{transform:translate3d(calc(-1*var(--w,0px)),-50%,0)} }
+@keyframes marquee-b     { from{transform:translate3d(var(--w,0px),-50%,0)} to{transform:translate3d(0,-50%,0)} }
+@keyframes marquee-rev-a { from{transform:translate3d(0,-50%,0)} to{transform:translate3d(var(--w,0px),-50%,0)} }
+@keyframes marquee-rev-b { from{transform:translate3d(calc(-1*var(--w,0px)),-50%,0)} to{transform:translate3d(0,-50%,0)} }
+
+@media (max-width:576px){
+  .logo-marquee { height:50px; }
+  .logo-marquee img { height:34px; }
+  .logo-track, .logo-track.clone { gap:32px; }
 }
 
+/* keep these helpers */
 .logo-marquee { contain: content; backface-visibility: hidden; }
+@media (prefers-reduced-motion: reduce){
+  .logo-track, .logo-track.clone { animation: none !important; transform: translate3d(0,-50%,0) !important; }
+}
+
+/* give each track a trailing spacer */
+.logo-track::after {
+  content: "";
+  display: block;
+  flex: 0 0 20px;   /* adjust 80px to how much space you want */
+}
+
