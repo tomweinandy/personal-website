@@ -231,4 +231,45 @@
    */
   new PureCounter();
 
+  // Additions for FEATURED IN marquee
+  (function () {
+  function onceImagesReady(container) {
+    const imgs = container.querySelectorAll('img');
+    return Promise.all(Array.from(imgs).map(img => {
+      if (img.complete && img.naturalWidth) return Promise.resolve();
+      return new Promise(res => img.addEventListener('load', res, {once:true}));
+    }));
+  }
+
+  function setupRow(mq) {
+    const track = mq.querySelector('.logo-track');
+    mq.querySelectorAll('.logo-track.clone').forEach(n => n.remove());
+
+    const clone = track.cloneNode(true);
+    clone.classList.add('clone');
+    mq.appendChild(clone);
+
+    const w = track.scrollWidth;
+    mq.style.setProperty('--w', w + 'px');
+
+    const pps = Number(mq.dataset.speed || 120);
+    mq.style.setProperty('--dur', (w / pps) + 's');
+
+    // ✅ explicitly start animations after width/duration are set
+    track.style.animationPlayState = 'running';
+    clone.style.animationPlayState = 'running';
+  }
+
+  function init() {
+    document.querySelectorAll('.logo-marquee').forEach(mq => {
+      onceImagesReady(mq).then(() => setupRow(mq));
+    });
+  }
+
+  window.addEventListener('load', init);
+  window.addEventListener('resize', init);
+})();
+
+
+
 })()

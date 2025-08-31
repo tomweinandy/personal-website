@@ -34,23 +34,8 @@
   <!-- =======================================================
    * Scripts added later by me
   ======================================================== -->
-  <script>
-    // Continuous, responsive “marquee” style scroll
-    new Swiper('.press-swiper', {
-      loop: true,
-      slidesPerView: 'auto',
-      spaceBetween: 32,
-      speed: 4000,                         // smooth continuous movement
-      allowTouchMove: true,
-      autoplay: { delay: 0, disableOnInteraction: false },
-      freeMode: { enabled: true, momentum: false },
-      breakpoints: {
-        0:   { spaceBetween: 20 },
-        576: { spaceBetween: 24 },
-        992: { spaceBetween: 32 }
-      }
-    });
-  </script>
+
+
 
 </head>
 
@@ -97,7 +82,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <div id="hero" class="hero route bg-image" style="background-image: url(static/img/a_weinandy_in_london2.jpg)">
+  <div id="hero" class="hero route bg-image" style="background-image: url(static/img/weinandy_gray.jpg)">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
       <div class="table-cell">
@@ -375,12 +360,6 @@
             <img src="static/img/logos/npr.svg" alt="NPR">
             <img src="static/img/logos/new_york_post.png" alt="New York Post">
             <img src="static/img/logos/yahoo_finance.png" alt="Yahoo Finance">
-            <!-- duplicate set -->
-            <img src="static/img/logos/axios.svg" alt="Axios">
-            <img src="static/img/logos/cnbc.svg" alt="CNBC">
-            <img src="static/img/logos/npr.svg" alt="NPR">
-            <img src="static/img/logos/new_york_post.png" alt="New York Post">
-            <img src="static/img/logos/yahoo_finance.png" alt="Yahoo Finance">
           </div>
         </div>
 
@@ -388,12 +367,6 @@
 <!--        <div class="logo-marquee">-->
         <div class="logo-marquee" data-speed="110" data-reverse>
           <div class="logo-track reverse">
-            <img src="static/img/logos/cbs_radio.svg" alt="CBS Radio">
-            <img src="static/img/logos/retail_brew.png" alt="Retail Brew">
-            <img src="static/img/logos/scripps_news.png" alt="Scripps News">
-            <img src="static/img/logos/today_show.png" alt="Today Show">
-            <img src="static/img/logos/washington_times.svg" alt="Washington Times">
-            <!-- duplicate set -->
             <img src="static/img/logos/cbs_radio.svg" alt="CBS Radio">
             <img src="static/img/logos/retail_brew.png" alt="Retail Brew">
             <img src="static/img/logos/scripps_news.png" alt="Scripps News">
@@ -409,11 +382,6 @@
 <!--            <img src="static/img/logos/outlet3.png" alt="">-->
 <!--            <img src="static/img/logos/outlet5.png" alt="">-->
 <!--            <img src="static/img/logos/outlet7.png" alt="">-->
-<!--            &lt;!&ndash; duplicate set &ndash;&gt;-->
-<!--            <img src="static/img/logos/outlet1.png" alt="" aria-hidden="true">-->
-<!--            <img src="static/img/logos/outlet3.png" alt="" aria-hidden="true">-->
-<!--            <img src="static/img/logos/outlet5.png" alt="" aria-hidden="true">-->
-<!--            <img src="static/img/logos/outlet7.png" alt="" aria-hidden="true">-->
 <!--          </div>-->
 <!--        </div>-->
       </div>
@@ -499,12 +467,15 @@
           <div class="col-sm-12">
             <div class="title-box text-center">
               <h3 class="title-a">
-                Portfolio
+                Highlighted Talks
               </h3>
               <p class="subtitle-a">
-                Select projects from the 100 Days of Code challenge. See the entire list
-                <a href="https://github.com/tomweinandy/100DaysOfCode" target="_blank" class="color-a">here</a>
-                but the best projects are below.
+                My passion is telling data-driven narratives to non-technical audiences, especially on how my research
+                informs business decision-making. I regularly speak on a variety of topics related to my focus areas
+                as well as the grocery, restaurant, and fuel/convenience industries.
+                <br><br>The below featured talks are already prepared and ready to be tailored to a specific audience. I
+                also welcome speaking opportunities on novel topics and always have new ideas that have not found an
+                opportunity to share publicly yet. Reach out so we can talk more.
               </p>
               <div class="line-mf"></div>
             </div>
@@ -1270,6 +1241,46 @@
 
   <!-- Template Main JS File -->
   <script src="static/js/main.js"></script>
+
+  <!--Function for the Featured In marquee-->
+  <script>
+  (function () {
+    function onceReady(node){
+      const imgs = node.querySelectorAll('img');
+      return Promise.all([...imgs].map(img =>
+        (img.complete && img.naturalWidth) ? Promise.resolve() :
+        new Promise(res => img.addEventListener('load', res, {once:true}))
+      ));
+    }
+    function setup(mq){
+      const first = mq.querySelector('.logo-track');
+      mq.querySelectorAll('.logo-track.clone').forEach(n=>n.remove());
+      const clone = first.cloneNode(true);
+      clone.classList.add('clone');
+      mq.appendChild(clone);
+      const w = first.scrollWidth;
+      mq.style.setProperty('--w', w + 'px');
+      const pps = Number(mq.dataset.speed || 120);
+      mq.style.setProperty('--dur', (w / pps) + 's');
+    }
+    function init(){
+      document.querySelectorAll('.logo-marquee').forEach(mq=>{
+        onceReady(mq).then(()=>setup(mq));
+      });
+    }
+
+    // run once after load
+    window.addEventListener('load', init, {passive:true});
+
+    // debounced resize
+    let t;
+    window.addEventListener('resize', () => {
+      clearTimeout(t);
+      t = setTimeout(init, 150);
+    }, {passive:true});
+  })();
+  </script>
+
 
 </body>
 

@@ -1559,43 +1559,11 @@ footer .credits a {
   .press-logo { height: 40px; }
 }
 
-
-/* Featured-in logos: multi-row marquee */
-.featured-in { background:#fff; overflow:hidden; }
-
-.logo-marquee { overflow:hidden; white-space:nowrap; margin: 20px 0; }
-.logo-track {
-  display:inline-flex;
-  align-items:center;
-  gap:100px;
-  animation: marquee 50s linear infinite; /* scroll speed */
-}
-.logo-track.reverse {
-  animation: marquee-reverse 50s linear infinite; /* scroll speed */
+@media (prefers-reduced-motion: reduce){
+  .logo-track, .logo-track.clone {
+    animation: none !important;
+    transform: translate3d(0,-50%,0) !important;
+  }
 }
 
-.logo-marquee img {
-  height:44px;
-  width:auto;
-  display:block;
-  filter:none;
-  opacity:1;
-  transition:none;
-  vertical-align:middle;
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-@keyframes marquee-reverse {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
-}
-
-/* small screens */
-@media (max-width:576px){
-  .logo-marquee img { height:34px; }
-  .logo-track { gap:32px; animation-duration:7s; }
-  .logo-track.reverse { animation-duration:8s; }
-}
+.logo-marquee { contain: content; backface-visibility: hidden; }
