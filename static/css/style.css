@@ -1487,4 +1487,115 @@ footer .credits a {
 /*--------------------------------------------------------------
 # Custom additions by Tom
 --------------------------------------------------------------*/
+/* === Center the icon inside the circle everywhere === */
+.ico-circle {
+  display: flex;               /* override earlier display:block */
+  align-items: center;         /* vertical center */
+  justify-content: center;     /* horizontal center */
+  line-height: 1;              /* kill extra vertical space */
+}
 
+/* Make sure the <i> itself doesn't push upward */
+.ico-circle i {
+  line-height: 1;
+}
+
+/* Counter-specific circle (keeps your ring + size but centers content) */
+.counter-ico .ico-circle {
+  /* keep your existing height/width/ring; just ensure flex applies here too */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icon { width:24px; height:24px; display:block; }     /* size & remove baseline shift */
+.socials .ico-circle { display:flex; align-items:center; justify-content:center; }
+
+/* optional: make the butterfly turn white on hover to match others */
+.socials .ico-circle:hover img { filter: invert(1); }
+
+.socials ul {
+  display: flex;
+  gap: 20px;              /* even spacing */
+  align-items: center;    /* vertical alignment */
+}
+
+.socials ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Force Scholar logo to be monochrome */
+.social-icon-scholar {
+  width: 24px;
+  height: 24px;
+  display: block;
+  filter: brightness(0) saturate(100%); /* makes it black */
+  transition: filter 0.3s ease;
+}
+
+/* On hover: invert to white */
+.socials .ico-circle:hover .social-icon-scholar {
+  filter: brightness(0) invert(1);
+}
+
+/* Press logos slider */
+.press-logos { padding: 3rem 0; position: relative; }
+.press-logos .title-a { color: #fff; text-transform: none; }
+.press-swiper .swiper-slide { width: auto; }                    /* allow natural logo width */
+.press-logo {
+  height: 48px;                 /* adjust if needed (64px also looks good) */
+  width: auto;
+  display: block;
+  opacity: 0.85;
+  filter: brightness(0) invert(1); /* normalize to white over blue bg */
+  transition: transform .25s ease, opacity .25s ease, filter .25s ease;
+}
+.press-logo:hover { opacity: 1; transform: scale(1.04); }
+
+/* on very small screens give a bit more height */
+@media (max-width: 576px) {
+  .press-logo { height: 40px; }
+}
+
+
+/* Featured-in logos: multi-row marquee */
+.featured-in { background:#fff; overflow:hidden; }
+
+.logo-marquee { overflow:hidden; white-space:nowrap; margin: 20px 0; }
+.logo-track {
+  display:inline-flex;
+  align-items:center;
+  gap:100px;
+  animation: marquee 50s linear infinite; /* scroll speed */
+}
+.logo-track.reverse {
+  animation: marquee-reverse 50s linear infinite; /* scroll speed */
+}
+
+.logo-marquee img {
+  height:44px;
+  width:auto;
+  display:block;
+  filter:none;
+  opacity:1;
+  transition:none;
+  vertical-align:middle;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-reverse {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* small screens */
+@media (max-width:576px){
+  .logo-marquee img { height:34px; }
+  .logo-track { gap:32px; animation-duration:7s; }
+  .logo-track.reverse { animation-duration:8s; }
+}

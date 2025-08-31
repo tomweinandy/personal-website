@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
 <!--Attempted new design here to no avail  https://app.svgator.com/editor#/d6ffa21736134ecb942d224b40043250-->
-  <link href="static/img/fav_econ.ico" rel="icon">
+  <link href="static/img/icons/fav_econ.ico" rel="icon">
   <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
 
   <!-- Vendor CSS Files -->
@@ -30,6 +30,28 @@
   * License: https://bootstrapmade.com/license/
   * Purchase Date: October 9, 2022
   ======================================================== -->
+
+  <!-- =======================================================
+   * Scripts added later by me
+  ======================================================== -->
+  <script>
+    // Continuous, responsive “marquee” style scroll
+    new Swiper('.press-swiper', {
+      loop: true,
+      slidesPerView: 'auto',
+      spaceBetween: 32,
+      speed: 4000,                         // smooth continuous movement
+      allowTouchMove: true,
+      autoplay: { delay: 0, disableOnInteraction: false },
+      freeMode: { enabled: true, momentum: false },
+      breakpoints: {
+        0:   { spaceBetween: 20 },
+        576: { spaceBetween: 24 },
+        992: { spaceBetween: 32 }
+      }
+    });
+  </script>
+
 </head>
 
 <body>
@@ -336,59 +358,137 @@
       </div>
     </section><!-- End Services Section -->
 
-    <!-- ======= Counter Section ======= as of 10/10/22 -->
-    <div class="section-counter paralax-mf bg-image" style="background-image: url(static/img/code.png)">
+    <!-- ======= Featured Section ======= -->
+    <section id="featured-in" class="featured-in py-5">
+      <div class="container">
+        <div class="title-box text-center">
+          <h3 class="title-a">Research featured in</h3>
+          <div class="line-mf"></div>
+        </div>
+
+        <!-- Row 1 -->
+        <div class="logo-marquee">
+          <div class="logo-track">
+            <img src="static/img/logos/axios.svg" alt="Axios">
+            <img src="static/img/logos/cnbc.svg" alt="CNBC">
+            <img src="static/img/logos/npr.svg" alt="NPR">
+            <img src="static/img/logos/new_york_post.png" alt="New York Post">
+            <img src="static/img/logos/yahoo_finance.png" alt="Yahoo Finance">
+            <!-- duplicate set -->
+            <img src="static/img/logos/axios.svg" alt="Axios">
+            <img src="static/img/logos/cnbc.svg" alt="CNBC">
+            <img src="static/img/logos/npr.svg" alt="NPR">
+            <img src="static/img/logos/new_york_post.png" alt="New York Post">
+            <img src="static/img/logos/yahoo_finance.png" alt="Yahoo Finance">
+          </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div class="logo-marquee">
+          <div class="logo-track reverse">
+            <img src="static/img/logos/cbs_radio.svg" alt="CBS Radio">
+            <img src="static/img/logos/retail_brew.png" alt="Retail Brew">
+            <img src="static/img/logos/scripps_news.png" alt="Scripps News">
+            <img src="static/img/logos/today_show.png" alt="Today Show">
+            <img src="static/img/logos/washington_times.svg" alt="Washington Times">
+            <!-- duplicate set -->
+            <img src="static/img/logos/cbs_radio.svg" alt="CBS Radio">
+            <img src="static/img/logos/retail_brew.png" alt="Retail Brew">
+            <img src="static/img/logos/scripps_news.png" alt="Scripps News">
+            <img src="static/img/logos/today_show.png" alt="Today Show">
+            <img src="static/img/logos/washington_times.svg" alt="Washington Times">
+          </div>
+        </div>
+
+<!--        &lt;!&ndash; Row 3 &ndash;&gt;-->
+<!--        <div class="logo-marquee">-->
+<!--          <div class="logo-track">-->
+<!--            <img src="static/img/logos/outlet1.png" alt="">-->
+<!--            <img src="static/img/logos/outlet3.png" alt="">-->
+<!--            <img src="static/img/logos/outlet5.png" alt="">-->
+<!--            <img src="static/img/logos/outlet7.png" alt="">-->
+<!--            &lt;!&ndash; duplicate set &ndash;&gt;-->
+<!--            <img src="static/img/logos/outlet1.png" alt="" aria-hidden="true">-->
+<!--            <img src="static/img/logos/outlet3.png" alt="" aria-hidden="true">-->
+<!--            <img src="static/img/logos/outlet5.png" alt="" aria-hidden="true">-->
+<!--            <img src="static/img/logos/outlet7.png" alt="" aria-hidden="true">-->
+<!--          </div>-->
+<!--        </div>-->
+      </div>
+    </section>
+    <!-- End Featured In -->
+
+
+    <!-- ======= Counter Section ======= as of 8/30/25 -->
+    <div class="section-counter paralax-mf bg-image" style="background-image: url(static/img/weinandy_today2.jpg)">
       <div class="overlay-mf"></div>
       <div class="container position-relative">
         <div class="row">
+
+          <!-- Press Mentions -->
           <div class="col-sm-3 col-lg-3">
             <div class="counter-box pt-4 pt-md-0">
               <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-book"></i></span>
+                <span class="ico-circle"><i class="bi bi-newspaper"></i></span>
               </div>
               <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="63" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">UNIQUE PYTHON<br>LIBRARIES USED</span>
+                <p data-purecounter-start="0" data-purecounter-end="58" data-purecounter-duration="1" class="counter purecounter"></p>
+                <span class="counter-text">PRESS MENTIONS<br>OF RESEARCH</span>
               </div>
             </div>
           </div>
-          <div class="col-sm-3 col-lg-3">
-            <div class="counter-box counter-box pt-4 pt-md-0">
-              <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-filetype-py"></i></span>
-              </div>
-              <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="93" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">PROJECTS<br>COMPLETED</span>
-              </div>
-            </div>
-          </div>
+
+          <!-- Talks -->
           <div class="col-sm-3 col-lg-3">
             <div class="counter-box pt-4 pt-md-0">
               <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-calendar3"></i></span>
+                <span class="ico-circle"><i class="bi bi-mic"></i></span>
               </div>
               <div class="counter-num">
-<!--                as of 10/10/22-->
-                <p data-purecounter-start="0" data-purecounter-end="182" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">DAYS WITH AT<br>LEAST ONE COMMIT</span>
+                <p data-purecounter-start="0" data-purecounter-end="25" data-purecounter-duration="1" class="counter purecounter"></p>
+                <span class="counter-text">CONFERENCE AND<br>EVENT TALKS</span>
               </div>
             </div>
           </div>
+
+          <!-- Audience Size -->
           <div class="col-sm-3 col-lg-3">
             <div class="counter-box pt-4 pt-md-0">
               <div class="counter-ico">
-                <span class="ico-circle"><i class="bi bi-git"></i></span>
+                <span class="ico-circle"><i class="bi bi-people"></i></span>
               </div>
               <div class="counter-num">
-                <p data-purecounter-start="0" data-purecounter-end="820" data-purecounter-duration="1" class="counter purecounter"></p>
-                <span class="counter-text">CODE<br>COMMITS</span>
+                <p data-purecounter-start="0"
+                 data-purecounter-end="2230"
+                 data-purecounter-duration="1"
+                 data-purecounter-separator="true"
+                 class="counter purecounter"></p>
+                <span class="counter-text">AUDIENCE SIZE OF<br>SPEAKING EVENTS</span>
               </div>
             </div>
           </div>
+
+          <!-- Webinar Views -->
+          <div class="col-sm-3 col-lg-3">
+            <div class="counter-box pt-4 pt-md-0">
+              <div class="counter-ico">
+                <span class="ico-circle"><i class="bi bi-play-btn"></i></span>
+              </div>
+              <div class="counter-num">
+                <p data-purecounter-start="0"
+                 data-purecounter-end="26763"
+                 data-purecounter-duration="1"
+                 data-purecounter-separator="true"
+                 class="counter purecounter"></p>
+                <span class="counter-text">WEBINAR<br>VIEWS</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </div><!-- End Counter Section -->
+
 
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio" class="portfolio-mf sect-pt4 route">
@@ -858,7 +958,8 @@
       </div>
     </section><!-- End Portfolio Section -->
 
-    <!-- ======= Testimonials Section ======= -->
+
+<!--&lt;!&ndash;     ======= Testimonials Section =======&ndash;&gt;-->
 <!--    <div class="testimonials paralax-mf bg-image" style="background-image: url(static/img/overlay-bg.jpg)">-->
 <!--      <div class="overlay-mf"></div>-->
 <!--      <div class="container">-->
@@ -900,16 +1001,13 @@
 <!--              </div>-->
 <!--              <div class="swiper-pagination"></div>-->
 <!--            </div>-->
-
-<!--            &lt;!&ndash; <div id="testimonial-mf" class="owl-carousel owl-theme">-->
-<!--          -->
-<!--        </div> &ndash;&gt;-->
+<!--            <div id="testimonial-mf" class="owl-carousel owl-theme"></div>-->
 <!--          </div>-->
 <!--        </div>-->
 <!--      </div>-->
 <!--    </div>&lt;!&ndash; End Testimonials Section &ndash;&gt;-->
 
-    <!-- ======= Blog Section ======= -->
+<!--     ======= Blog Section =======-->
 <!--    <section id="blog" class="blog-mf sect-pt4 route">-->
 <!--      <div class="container">-->
 <!--        <div class="row">-->
@@ -1089,9 +1187,29 @@
                     </div>
                     <div class="socials">
                       <ul>
+                        <li>
+                          <a href="https://bsky.app/profile/tomweinandy.bsky.social" target="_blank" rel="noopener">
+                            <span class="ico-circle d-flex align-items-center justify-content-center">
+                              <img
+                                src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Bluesky_logo_%28black%29.svg"
+                                alt="Bluesky"
+                                class="social-icon"
+                              >
+                            </span>
+                          </a>
+                        </li>
                         <li><a href="https://github.com/tomweinandy" target="_blank"><span class="ico-circle"><i class="bi bi-github"></i></span></a></li>
-                        <li><a href="https://twitter.com/TomWeinandy" target="_blank"><span class="ico-circle"><i class="bi bi-twitter"></i></span></a></li>
+                        <li>
+                          <a href="https://scholar.google.com/citations?user=b1pVFSEAAAAJ&hl=en"
+                             target="_blank" aria-label="Google Scholar">
+                            <span class="ico-circle d-flex align-items-center justify-content-center">
+                              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Scholar_logo.svg"
+                                   alt="Google Scholar" class="social-icon social-icon-scholar">
+                            </span>
+                          </a>
+                        </li>
                         <li><a href="https://www.linkedin.com/in/tomweinandy/" target="_blank"><span class="ico-circle"><i class="bi bi-linkedin"></i></span></a></li>
+                        <li><a href="https://twitter.com/TomWeinandy" target="_blank"><span class="ico-circle"><i class="bi bi-twitter"></i></span></a></li>
                       </ul>
                     </div>
 
