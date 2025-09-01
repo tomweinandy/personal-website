@@ -1601,6 +1601,10 @@ footer .credits a {
 .logo-track::after {
   content: "";
   display: block;
-  flex: 0 0 20px;   /* adjust 80px to how much space you want */
+  flex: 0 0 10px;   /* adjust 80px to how much space you want */
 }
 
+/*!*!* Make the contact section taller *!*!*/
+/*.paralax-mf.footer-paralax {*/
+/*  padding: 10rem 0;   !* increase from 4rem *!*/
+/*}*/
