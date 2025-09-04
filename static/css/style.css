@@ -1606,7 +1606,12 @@ footer .credits a {
   flex: 0 0 10px;   /* adjust 80px to how much space you want */
 }
 
-/*!*!* Make the contact section taller *!*!*/
-/*.paralax-mf.footer-paralax {*/
-/*  padding: 10rem 0;   !* increase from 4rem *!*/
-/*}*/
+/* Larger, muted italic text for talk taglines */
+.work-content .w-more em {
+  font-size: .95rem;      /* slightly larger */
+  font-style: italic;
+  color: #6c757d;          /* Bootstrap's muted gray */
+  display: block;          /* clean line break */
+  line-height: 1.4;
+}
+
