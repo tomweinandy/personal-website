@@ -1620,13 +1620,22 @@ footer .credits a {
   background-position: 50% -60%;   /* 60% up from the bottom */
 }
 
-/* Book section: show more image and use black overlay */
-/*#contact.paralax-mf {*/
-/*  padding-top: 8rem;   !* increase height *!*/
-/*  padding-bottom: 8rem;*/
-/*}*/
-
+/* Book section: Use black overlay */
 #book .overlay-mf {
   background-color: #000; /* black tint */
   opacity: 0.4;           /* adjust darkness (0 = none, 1 = solid) */
+}
+
+/* Counter section: bigger numbers and labels */
+.section-counter .counter-num .counter {
+  font-size: 3rem;     /* was 2rem */
+  font-weight: 700;    /* make it stand out */
+}
+
+.section-counter .counter-text {
+  font-size: 1.5rem;   /* was smaller body size */
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-top: 0.5rem;
 }
