@@ -1639,3 +1639,8 @@ footer .credits a {
   display: block;
   margin-top: 0.5rem;
 }
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+}
