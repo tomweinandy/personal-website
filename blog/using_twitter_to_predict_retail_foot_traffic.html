@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Using Twitter to predict retail foot traffic | Thomas J. Weinandy, Ph.D.</title>
+  <meta content="Blog post by Thomas J. Weinandy, Ph.D." name="description">
+  <meta content="Economics, Retail, Social Media, Data Science, Multilevel Analysis" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static/img/icons/fav_econ.ico" rel="icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/img/apple-touch-icon.png">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="../index.html#hero">Supplying your economics demand</a></h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="../index.html#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="../index.html#about">About me</a></li>
+          <li><a class="nav-link scrollto" href="../index.html#categories">Focus areas</a></li>
+          <li><a class="nav-link scrollto" href="../index.html#talks">Talks</a></li>
+          <li><a class="nav-link scrollto" href="../index.html#book">Book</a></li>
+          <li><a class="nav-link scrollto" href="../index.html#blog">Blog</a></li>
+          <li><a class="nav-link scrollto" href="../index.html#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero ======= -->
+  <div class="hero hero-single route bg-image"
+       style="background-image: url(../static/img/overlay-bg.jpg); background-size: cover; background-position: center;">
+    <div class="overlay-mf"></div>
+    <div class="hero-content display-table">
+      <div class="table-cell">
+        <div class="container">
+<!--          <h2 class="hero-title mb-3">Using Twitter to predict retail foot traffic</h2>-->
+<!--          <p class="mb-0 text-white-50">-->
+<!--            <span class="me-3"><i class="bi bi-calendar3 me-1"></i> 2023-02-14</span>-->
+<!--            <span class="me-3"><i class="bi bi-clock me-1"></i> ~4 min read</span>-->
+<!--            <span><i class="bi bi-tag me-1"></i> Economics, Retail</span>-->
+<!--          </p>-->
+        </div>
+      </div>
+    </div>
+  </div><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Blog Post Section ======= -->
+    <section class="blog-wrapper sect-pt4 route">
+      <div class="container">
+        <div class="row">
+
+          <!-- Main post -->
+          <div class="col-md-8">
+            <div class="box-shadow-full">
+
+              <!-- Title (inside box, like About) -->
+              <div class="title-box-2 text-start mb-4">
+                <h1 class="title-left">Using Twitter to predict retail foot traffic</h1>
+              </div>
+
+              <p class="lead mb-4">
+                Our online and offline lives are increasingly blurring together, affecting how we interact and how we shop.
+                Despite a wide literature on the relationship between digital word-of-mouth communication and e-commerce,
+                research has said comparatively little about whether online discussions translate into in-person sales of
+                national brands.
+              </p>
+
+              <hr>
+
+              <h3 class="mt-4">Research question</h3>
+              <p>
+                My new co-authored paper takes on the widest study to date about how social chatter predicts brick-and-mortar sales.
+                You can now view
+                <a href="https://rdcu.be/c42Gb" target="_blank" rel="noopener" class="color-a">
+                  "Twitter-patter: how social media drives foot traffic to retail stores"
+                </a>
+                available in the <em>Journal of Marketing Analytics</em>.
+                We address the question: do tweets mentioning a brand signal future demand for that retailer?
+              </p>
+
+
+              <figure class="my-4">
+                <a href="../static/img/sir_this_is_an_aldi.jpeg" class="portfolio-lightbox" data-gallery="blogGallery">
+                  <img src="../static/img/sir_this_is_an_aldi.jpeg" class="img-fluid rounded" alt="Truth in under 140 characters">
+                </a>
+                <figcaption class="text-muted mt-2" style="font-size: 0.95rem;">
+                  Courtesy of
+                  <a href="https://twitter.com/simoncholland" target="_blank" rel="noopener"> Simon Holland </a>
+                  , used with permission
+                </figcaption>
+              </figure>
+
+              <h3 class="mt-4">Data</h3>
+              <p>
+                We identified 3,870 stores between 15 nationally-known retail brands with names that can be easily distinguished on Twitter (e.g., Petco, not Target). We then collected 2.7 million tweets mentioning one of those brands and acquired data from 15.7 million store visits.
+              </p>
+
+              <h3 class="mt-4">Methods</h3>
+              <p>
+                The next step was to define different measures of social media activity to estimate how changes in those values correspond to changes in foot traffic. Specifically, we used hierarchical linear regression to properly account for how tweets mentioning a brand influence customers to visit, not the brand itself, but physical stores of that brand.
+                <br><br>
+                The overall approach is best summarized in the diagram below.
+              </p>
+
+              <figure class="my-4">
+                <a href="../static/img/twitter_patter_system_architecture.jpeg" class="portfolio-lightbox" data-gallery="blogGallery">
+                  <img src="../static/img/twitter_patter_system_architecture.jpeg" class="img-fluid rounded" alt="ya like dags?">
+                </a>
+<!--                <figcaption class="text-muted mt-2" style="font-size: 0.95rem;">-->
+<!--                  XX-->
+<!--                </figcaption>-->
+              </figure>
+
+              <h3 class="mt-4">Results & Discussion</h3>
+              <p>
+                I highlight the top seven results of the paper with recommendations for both researchers and practitioners.
+                <br><br>
+                1. Sentiment is a popular way to analyze text, but here we found the intra-day spread of sentiment was a more useful measure than average sentiment. We call this “disagreement”.
+                <br>
+                <ul>
+                  <li>We suggest researchers and data scientists use sentiment disagreement as a way to capture how diverse opinions are on a given day.</li>
+                </ul>
+                2. When “likes” of a brand increase by one standard deviation (in this case, 251% on average) or when disagreement of those liked tweets increase by one standard deviation (24%), then store visits of that brand increase 3–4% the next day.
+                <br><br>
+                <ul>
+                  <li>Brand managers should be cautious about applying the wider word-of-mouth literature to brick-and-mortar settings. Most research relates only to online sales where effects can be 10–20 times larger.</li>
+                </ul>
+                3. Twitter has the strongest impact on retail foot traffic one to three days later and no impact by day seven.
+                <br><br>
+                <ul>
+                  <li>Further research should analyze how this compares with other social media platforms since Twitter is known as being particularly short-term and reactive.</li>
+                </ul>
+                4. The global effect (i.e., the relationship of social media activity about any given brand with stores of that brand) is rather small but still economically meaningful.
+                <br><br>
+                <ul>
+                  <li>Further research should explore if these results hold for lesser-known retail brands.</li>
+                </ul>
+                5. Most of the impact social media has on foot traffic to retail stores is unique to the store and to the brand.
+                <br><br>
+                <ul>
+                  <li>We suggest marketers do not generalize these results too much, and where possible, estimate the effects for their own brand.</li>
+                </ul>
+                6. It’s unclear if social media <em>causes</em> changes in foot traffic or is merely capturing <e,>changes that will happen</em>.
+                <br><br>
+                <ul>
+                  <li>Regardless of which is true, we recommend economists and data scientists use social media activity in sales forecasts, as we find it to be a useful leading indicator.</li>
+                </ul>
+                7. The statistical results from ordinary least squares regression were overly confident while hierarchical linear regression better captured the nested data present here.
+                <br><br>
+                <ul>
+                  <li>For data scientists, if your data is multilevel (e.g., various products located in various stores), it should be modeled as such.</li>
+                </ul>
+              </p>
+
+              <h3 class="mt-4">Conclusion</h3>
+              <p>
+                Twitter has a modest and meaningful effect on retail foot traffic; however, the impact varies widely by the individual brand and store. See
+                <a href="https://rdcu.be/c42Gb" target="_blank" rel="noopener" class="color-a">
+                  the paper
+                </a>
+                 for more details, and reach me on
+                <a href="https://www.linkedin.com/in/tomweinandy/" target="_blank" rel="noopener" class="color-a">
+                  LinkedIn
+                </a>
+                 if you have any questions.
+                <br><br>
+                <em>Special thanks to my wonderful co-authors: Kuanchin Chen, Susan Pozo, and Michael J. Ryan.</em>
+              </p>
+
+              <!-- Optional: Pull-quote/callout -->
+              <div class="p-3 my-4 rounded" style="background: rgba(0,0,0,0.03); border-left: 4px solid #0078ff;">
+                <p class="mb-0">
+                  This article was originally published on
+                  <a href="https://medium.com/@tomweinandy/using-twitter-to-predict-retail-foot-traffic-e024852651b2" target="_blank" rel="noopener" class="color-a">Medium</a>.
+                </p>
+              </div>
+
+<!--              <h3 class="mt-4">Subheader</h3>-->
+<!--              <p>-->
+<!--                Continue the post. If you want to include a chart/image, use the figure pattern below.-->
+<!--              </p>-->
+
+<!--              &lt;!&ndash; Optional: Figure &ndash;&gt;-->
+<!--              <figure class="my-4">-->
+<!--                <a href="../static/img/post-1.jpg" class="portfolio-lightbox" data-gallery="blogGallery">-->
+<!--                  <img src="../static/img/post-1.jpg" class="img-fluid rounded" alt="Descriptive alt text">-->
+<!--                </a>-->
+<!--                <figcaption class="text-muted mt-2" style="font-size: 0.95rem;">-->
+<!--                  Figure caption. Keep it simple.-->
+<!--                </figcaption>-->
+<!--              </figure>-->
+
+<!--              <h3 class="mt-4">Bullets (when you need them)</h3>-->
+<!--              <ul style="line-height: 1.7;">-->
+<!--                <li>Point one</li>-->
+<!--                <li>Point two</li>-->
+<!--                <li>Point three</li>-->
+<!--              </ul>-->
+
+<!--              <div class="title-box-2 text-start mt-5 mb-3">-->
+<!--                <h5 class="title-left">Wrap-up</h5>-->
+<!--              </div>-->
+
+<!--              <p>-->
+<!--                Close with a summary and (optionally) a “what’s next” line.-->
+<!--              </p>-->
+
+              <!-- Optional: CTA -->
+              <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+                <a href="../index.html#contact" class="btn btn-primary">Let's connect</a>
+<!--                <a href="../index.html#talks" class="btn btn-primary">See talks</a>-->
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-md-4">
+            <div class="box-shadow-full">
+
+              <div class="title-box-2 text-start mb-3">
+                <h5 class="title-left">Post details</h5>
+              </div>
+
+              <ul class="list-ico mb-4">
+                <li><span class="bi bi-person"></span> Thomas J. Weinandy, Ph.D.</li>
+                <li><span class="bi bi-calendar3"></span> 2023-02-14</li>
+                <li><span class="bi bi-clock"></span> ~4 min read</li>
+                <li><span class="bi bi-tag"></span> Economics, Retail</li>
+              </ul>
+
+<!--              <div class="title-box-2 text-start mb-3">-->
+<!--                <h5 class="title-left">Related links</h5>-->
+<!--              </div>-->
+
+<!--              <ul style="line-height: 1.7;">-->
+<!--                <li><a class="color-a" href="#" target="_blank" rel="noopener">Source / paper / dataset</a></li>-->
+<!--                <li><a class="color-a" href="#" target="_blank" rel="noopener">Another relevant link</a></li>-->
+<!--              </ul>-->
+
+<!--              <hr>-->
+
+<!--              <div class="title-box-2 text-start mb-3">-->
+<!--                <h5 class="title-left">About this blog</h5>-->
+<!--              </div>-->
+
+<!--              <p class="mb-0">-->
+<!--                Replace this with a one-liner about what you write about (economics, retail, AI, etc.).-->
+<!--              </p>-->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- End Blog Post Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright 2025 Thomas J. Weinandy, Ph.D. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../static/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/vendor/typed.js/typed.min.js"></script>
+  <script src="../static/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>
